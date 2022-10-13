@@ -11,7 +11,10 @@
   </head>
   <body>
     <main id="main">
-      <div class="header__content">
+      <!------------>
+      <!-- Header -->
+      <!------------>
+      <div class="header__container">
         <img
           src="/assets/pattern-circles.svg"
           alt="2 circles one larger than the other"
@@ -24,7 +27,46 @@
           </p>
         </div>
       </div>
-      <div class="component__content"></div>
+      <!----------->
+      <!-- Form  -->
+      <!----------->
+      <form id="form">
+        <p class="form__pageviews__number">100K PAGEVIEWS</p>
+        <!-- Range Input-->
+        <input
+          type="range"
+          name="pageviews"
+          id="pageviews"
+          min="0"
+          max="5"
+          step="1"
+          value="3"
+        />
+        <!-- Price -->
+        <div class="price__container">
+          <p class="price__text">
+            $16.00 <span class="price__text--small">/ month</span>
+          </p>
+        </div>
+        <!-- Toggle Container -->
+        <div class="toggle__container">
+          <!-- Monthly Price Text -->
+          <p class="toggle__pricing toggle__pricing--monthly">
+            Monthly Billing
+          </p>
+          <!-- Toggle Input -->
+          <label for="toggle__input">
+            <input type="checkbox" name="toggle__input" id="toggle__input" />
+            <div class="toggle">
+              <span class="toggle__circle"></span>
+            </div>
+          </label>
+          <!-- Yearly Price Text -->
+          <p class="toggle__pricing toggle__pricing--yearly">Yearly Billing</p>
+          <!-- Discount Price Text -->
+          <p class="toggle__pricing__discount">-25%</p>
+        </div>
+      </form>
     </main>
   </body>
 </html>
