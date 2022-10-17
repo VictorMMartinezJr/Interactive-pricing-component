@@ -8,7 +8,7 @@ const app = () => {
   const priceText = document.querySelector(".price__text--big");
 
   // DATA
-  const VIEWS_DATA = [
+  const DATA = [
     {
       pageViews: "10k",
       monthlyCost: 8,
@@ -36,21 +36,10 @@ const app = () => {
     },
   ];
 
-  const subtractYearly = (str) => {
-    const number = parseFloat(str);
-    if (inputToggle.checked) {
-      const result = number - number * 0.25;
-      currentPrice = result;
-      return `$${result.toFixed(2)}`;
-    }
-    currentPrice = number;
-    return `$${number.toFixed(2)}`;
-  };
-
   const getData = () => {
     const value = inputRange.value;
     const index = value - 1;
-    return VIEWS_DATA[index];
+    return DATA[index];
   };
 
   const updatePageViewsText = () => {
@@ -73,7 +62,7 @@ const app = () => {
 
   const updateBGPercentage = () => {
     const { backgroundPercentage } = getData();
-    form.style.setProperty("--left", backgroundPercentage);
+    form.style.setProperty("--range-bg", backgroundPercentage);
   };
 
   const updateUI = () => {
