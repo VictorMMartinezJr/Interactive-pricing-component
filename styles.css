@@ -97,14 +97,10 @@ input[type="range"] {
   background: transparent; /* Otherwise white in Chrome */
   margin-top: 3rem;
 }
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-
 input[type="range"]:focus {
-  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  outline: none;
 }
+/* Chrome */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 50px;
@@ -123,13 +119,16 @@ input[type="range"]:hover::-webkit-slider-thumb {
 }
 /* Firefox */
 input[type="range"]::-moz-range-thumb {
-  height: 30px;
-  width: 30px;
+  -webkit-appearance: none;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   background: url(/assets/icon-slider.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-color: var(--Strong-Cyan);
+  box-shadow: 0 10px 40px var(--Strong-Cyan);
+  transition: background-color 0.2s ease-in-out;
 }
 
 /** Track **/
@@ -153,6 +152,11 @@ input[type="range"]::-moz-range-track {
   cursor: pointer;
   background: var(--Light-Grayish-Blue);
   border-radius: 10px;
+  background-image: linear-gradient(
+    to right,
+    var(--Soft-Cyan) calc(var(--range-bg) * 1%),
+    transparent 0%
+  );
 }
 
 /** Price Container **/
